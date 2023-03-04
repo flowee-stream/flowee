@@ -1,2 +1,2 @@
 # flowee
-Flowee stream platform
+Flowee streaming platform
