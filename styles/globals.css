@@ -1,0 +1,113 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+    --color-primary: #6d4576;
+    --color-secondary: #9c68b0;
+}
+
+* {
+    font-family: 'Golos Text', sans-serif;
+    color: white;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(to right, var(--color-primary), var(--color-secondary));
+}
+
+main {
+    margin-left: 150px;
+    margin-top: 50px;
+}
+
+/* stream card */
+.stream-card {
+    display: flex;
+    gap: 30px;
+    background-color: var(--color-secondary);
+    border-top-left-radius: 50px;
+    border-bottom-left-radius: 50px;
+    border-top-right-radius: 15px;
+    border-bottom-right-radius: 15px;
+    padding-right: 30px;
+    transition: opacity 0.2s;
+}
+.stream-card > img {
+    border-radius: 100%;
+    border: 5px solid var(--color-primary);
+}
+
+.stream-card > div {
+    display: flex;
+    justify-content: center;
+    gap: 5px;
+    flex-direction: column;
+}
+.stream-card > div > .username {
+    font-size: 23px;
+    font-weight: bold;
+}
+
+.stream-card:hover {
+    opacity: 0.8;
+}
+
+/* globals */
+.unselectable {
+    -webkit-user-drag: none;
+    user-select: none;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+input {
+    background-color: #646464;
+    font-size: 17px;
+    color: white;
+    border: none;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    padding-left: 15px;
+    padding-right: 15px;
+    border-radius: 5px;
+    transition: all 0.2s;
+}
+input:focus {
+    outline: 2px solid #cbcbcb;
+}
+
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: #cbcbcb;
+    opacity: 1; /* Firefox */
+}
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+    color: #cbcbcb;
+}
+::-ms-input-placeholder { /* Microsoft Edge */
+    color: #cbcbcb;
+}
+
+button {
+    padding-top: 5px;
+    padding-bottom: 5px;
+    background-color: gray;
+    border: none;
+    font-weight: 600;
+    font-size: 18px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: opacity 0.2s;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+button:hover {
+    opacity: 0.9;
+}

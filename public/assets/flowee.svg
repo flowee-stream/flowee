@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="_Слой_1" data-name="Слой 1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 163 99">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: url(#_Безымянный_градиент_422);
+      }
+
+      .cls-2 {
+        fill: url(#_Безымянный_градиент_422-2);
+      }
+
+      .cls-3 {
+        fill: url(#_Безымянный_градиент_422-3);
+      }
+    </style>
+    <linearGradient id="_Безымянный_градиент_422" data-name="Безымянный градиент 422" x1="92" y1="79.5" x2="163" y2="79.5" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#8815ff"/>
+      <stop offset="1" stop-color="#da35ff"/>
+    </linearGradient>
+    <linearGradient id="_Безымянный_градиент_422-2" data-name="Безымянный градиент 422" x1="0" x2="71" xlink:href="#_Безымянный_градиент_422"/>
+    <linearGradient id="_Безымянный_градиент_422-3" data-name="Безымянный градиент 422" x1="11" y1="46.5" x2="82" y2="46.5" gradientTransform="translate(35 82) rotate(-90)" xlink:href="#_Безымянный_градиент_422"/>
+  </defs>
+  <ellipse class="cls-1" cx="127.5" cy="79.5" rx="35.5" ry="19.5"/>
+  <ellipse class="cls-2" cx="35.5" cy="79.5" rx="35.5" ry="19.5"/>
+  <ellipse class="cls-3" cx="81.5" cy="35.5" rx="19.5" ry="35.5"/>
+</svg>
