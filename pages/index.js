@@ -1,8 +1,8 @@
 import Head from "next/head"
+import Link from "next/link"
 import Sidebar from "@/components/Sidebar"
 
 import { BsBroadcast, BsPeopleFill } from "react-icons/bs"
-import Link from "next/link"
 
 export default function Home() {
 	return (
@@ -11,7 +11,7 @@ export default function Home() {
 				<title>Flowee</title>
 			</Head>
 			<Sidebar />
-			<main>
+			<main className="ml-[20px] md:ml-[150px] mt-[50px]">
 				<div className="flex flex-col">
 					<span className="font-bold text-[40px]">Welcome home</span>
 					<span className="font-semibold text-[25px]">Flowee is an open-source streaming platform built for people</span>
