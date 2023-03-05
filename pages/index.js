@@ -33,7 +33,7 @@ export default function Home(props) {
 					? <span>No one is streaming right now</span>
 					: props.live.map(user => {
 							return (
-								<Link key={user.id} className="flex gap-7 bg-[#9c68b0] rounded-l-[50px] rounded-r-[15px] pr-5 transition-opacity hover:opacity-80" href="/myst">
+								<Link key={user.id} className="flex gap-7 bg-[#9c68b0] rounded-l-[50px] rounded-r-[15px] pr-5 transition-opacity hover:opacity-80" href={`/${user.username}`}>
 									{user.avatar == 'default'
 									? <DefaultAvatar size="60" username={user.username} font="25" />
 									: <img src={user.avatar} className="rounded-full unselectable border-[5px] border-[#70676a]" width="60" alt="Avatar" />}
@@ -58,7 +58,7 @@ export default function Home(props) {
 						? <span>No users found</span>
 						: props.users.map(user => {
 							return (
-								<Link key={user.id} className="flex gap-7 bg-[#9c68b0] rounded-l-[50px] rounded-r-[15px] pr-5 transition-opacity hover:opacity-80" href="/myst">
+								<Link key={user.id} className="flex gap-7 bg-[#9c68b0] rounded-l-[50px] rounded-r-[15px] pr-5 transition-opacity hover:opacity-80" href={`/${user.username}`}>
 									{user.avatar == 'default'
 									? <DefaultAvatar size="60" username={user.username} font="25" />
 									: <img src={user.avatar} className="rounded-full unselectable border-[5px] border-[#70676a]" width="60" alt="Avatar" />}
