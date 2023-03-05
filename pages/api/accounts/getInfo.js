@@ -39,7 +39,7 @@ export default async function handler(req, res) {
             user2: target._id
         })
         
-        reply['isFollowed'] = Boolean(followCheck)
+        reply.isFollowed = Boolean(followCheck)
     }
 
     if(authorized && target._id.toString() == account._id.toString()) {

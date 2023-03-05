@@ -113,8 +113,8 @@ export default function Stream(props) {
 export async function getServerSideProps(ctx) {
     let username = ctx.params.username
     let token = ctx.req.cookies.token
-
-    let res = await axios.get(process.env.NEXT_PUBLIC_API_HOST + '/accounts/getInfo?username=' + username + (token && '&token=' + token))
+    
+    let res = await axios.get(process.env.NEXT_PUBLIC_API_HOST + '/accounts/getInfo?username=' + username + (token ? ('&token=' + token) : ''))
 
     if(!res.data.success && res.data.errorCode == -1) {
         return {
