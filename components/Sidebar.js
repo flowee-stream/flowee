@@ -3,6 +3,7 @@ import Image from "next/image"
 import { useEffect, useState } from "react"
 import axios from "axios"
 import { getCookie } from "cookies-next"
+import DefaultAvatar from "./DefaultAvatar"
 
 import { BsPersonCircle, BsFillGearFill } from "react-icons/bs"
 
@@ -37,8 +38,12 @@ export default function Sidebar() {
                 {userData.isLoggedIn
                 ? (
                     <>
-                        <a href="/settings" className="text-[30px] transition-opacity hover:opacity-80"><BsFillGearFill /></a>
-                        <a href={`/${userData.username}`} className="text-[30px] transition-opacity hover:opacity-80"><BsPersonCircle /></a>
+                        <Link href="/settings" className="text-[30px] transition-opacity hover:opacity-80"><BsFillGearFill /></Link>
+                        <Link href={`/${userData.username}`} className="text-[30px] transition-opacity hover:opacity-80">
+                            {userData.avatar == 'default'
+                            ? <DefaultAvatar size="40" font="20" username={userData.username} />
+                            : <img src={userData.avatar} width="40" height="40" className="rounded-full unselectable" />}
+                        </Link>
                     </>
                 ) : (
                     <>

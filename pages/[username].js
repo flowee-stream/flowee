@@ -73,15 +73,14 @@ export default function Stream(props) {
                     <div className="flex flex-col ml-2">
                         <span className="text-[20px] font-bold">{props.streamName}</span>
                         {props.isStreaming
-                        ? <span>{props.views} views • Started {timeDifference(props.lastStream)}</span>
-                        : <span>Last stream was {timeDifference(props.lastStream)}</span>}
+                        && <span>{props.views} views • Started {timeDifference(props.lastStream)}</span>}
                     </div>
                     
-                    <div className="flex gap-7 bg-[#9c68b0] rounded-l-[50px] md:rounded-r-[15px] max-w-[500px] mt-5">
+                    <div className="flex flex-col gap-1 py-2 items-center justify-center md:flex-row md:items-start bg-[#9c68b0] md:rounded-l-[50px] md:rounded-r-[15px] md:max-w-[500px] mt-5">
                         {props.avatar == 'default'
 						? <DefaultAvatar size="60" username={props.username} font="25" />
 						: <img src={props.avatar} className="rounded-full unselectable border-[5px] border-[#70676a]" width="60" alt="Avatar" />}
-                        <div className="flex flex-col text-center">
+                        <div className="flex flex-col text-center ml-5">
                             <span className="text-[20px] font-semibold">{props.username}</span>
                             <span className="flex gap-2">
                                 {props.isStreaming
@@ -98,8 +97,8 @@ export default function Stream(props) {
                                 )}
                             </span>
                         </div>
-                        <div className="ml-auto flex gap-3 items-center pr-3">
-                            <span className="font-medium">{abbrNum(props.followers, 1)} follower{props.followers > 1 || props.followers == 0 && 's'}</span>
+                        <div className="md:ml-auto flex md:my-auto gap-3 items-center pr-3">
+                            <span className="font-medium">{abbrNum(props.followers, 1)} follower{(props.followers > 1 || props.followers == 0) && 's'}</span>
                             {!props.isYou
                             && <button onClick={follow}>{followed ? 'Unfollow' : 'Follow'}</button>}
                         </div>
