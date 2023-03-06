@@ -55,7 +55,7 @@ export default function Stream(props) {
                 <title>{`${props.username} - Flowee`}</title>
             </Head>
             <Sidebar />
-            <main className="flex flex-col md:mt-[80px] md:ml-[150px]">
+            <main className="flex flex-col md:mt-[50px] md:ml-[150px]">
                 {props.isStreaming
                 ? (
                     <div className="max-w-[1300px] md:mr-10">
@@ -76,11 +76,11 @@ export default function Stream(props) {
                         && <span>{props.views} views • Started {timeDifference(props.lastStream)}</span>}
                     </div>
                     
-                    <div className="flex flex-col gap-1 py-2 items-center justify-center md:flex-row md:items-start bg-[#9c68b0] md:rounded-l-[50px] md:rounded-r-[15px] md:max-w-[500px] mt-5">
+                    <div className="flex flex-col gap-1 py-2 items-center md:flex-row md:items-start bg-[#9c68b0] md:rounded-l-[50px] md:rounded-r-[15px] md:max-w-[500px] mt-5">
                         {props.avatar == 'default'
 						? <DefaultAvatar size="60" username={props.username} font="25" />
 						: <img src={props.avatar} className="rounded-full unselectable border-[5px] border-[#70676a]" width="60" alt="Avatar" />}
-                        <div className="flex flex-col text-center ml-5">
+                        <div className="flex flex-col text-center md:ml-5">
                             <span className="text-[20px] font-semibold">{props.username}</span>
                             <span className="flex gap-2">
                                 {props.isStreaming
