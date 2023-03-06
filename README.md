@@ -1,10 +1,8 @@
 # Flowee Streaming Service
 
-Flowee is an open-source streaming service designed to help users stream their media content with ease. This platform is built to be fast, reliable, and user-friendly, providing a seamless streaming experience for everyone. This readme provides step-by-step instructions on how to set up and start using Flowee.
+Flowee is an open-source streaming service designed to help users stream their media
 
-## Installation and Setup
-
-Before you can start using Flowee, please follow these steps to install and set up the application on your local machine.
+## Self-hosted
 
 1. Clone the Repository
 
@@ -24,7 +22,7 @@ nano .env
 
 Variable | Description | Example
 --- | --- | ---
-NEXT_PUBLIC_API_HOST | The API endpoint where Flowee can communicate with the server. | http://localhost:3000/api
+NEXT_PUBLIC_API_HOST | The API endpoint | http://localhost:3000/api
 MONGO_URL | The URL of the MongoDB server. | mongodb://localhost:27017/
 MONGO_DB | The name of the MongoDB database used by Flowee. | flowee
 
