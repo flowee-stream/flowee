@@ -19,6 +19,12 @@ export default function Settings(props) {
 
         err.innerText = ''
 
+        // pre-request error handling
+        if(streamSettings.streamName.length > 50) {
+            err.innerText = 'Stream name length can\'t be more than 50 symbols'
+            return
+        }
+
         let res = await axios.post(process.env.NEXT_PUBLIC_API_HOST + '/settings/updateStreamName', {
             token: props.token,
             newStreamName: streamSettings.streamName
@@ -43,7 +49,7 @@ export default function Settings(props) {
             </Head>
             <Sidebar />
             <main className="flex flex-col gap-10 mt-5 md:mt-[80px] md:ml-[150px]">
-                <div className="flex flex-col items-center md:items-start gap-3">
+                <div className="flex flex-col items-center text-center md:items-start gap-3">
                     <span className="text-[30px] font-medium">How to stream?</span>
                     <span>RTMP server:</span>
                     <code className="p-3 bg-gray-600 md:mr-10 md:rounded-md select-all">rtmp://rtmp.flowee.ru/live</code>
