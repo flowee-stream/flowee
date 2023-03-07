@@ -8,7 +8,7 @@ export default async function getUserList(req, res) {
 
     let liveUsers = await db.collection('accounts').find({ isStreaming: true }).toArray()
     liveUsers = liveUsers.sort((a, b) => {
-        return b.lastStreamTimestamp - a.lastStreamTimestamp
+        return b.lastStream - a.lastStream
     })
 
     for(const user of liveUsers) {
@@ -23,16 +23,18 @@ export default async function getUserList(req, res) {
 
     let streamers = await db.collection('accounts').find().toArray()
     streamers = streamers.sort((a, b) => {
-        return b.lastStreamTimestamp - a.lastStreamTimestamp
+        return b.lastStream - a.lastStream
     })
 
-    for(const streamer of streamers) {
+    for(const user of streamers) {
+        if(user.lastStream == 0) continue
+
         users.push({
-            id: streamer._id.toString(),
-            username: streamer.username,
-            avatar: streamer.avatar,
-            isStreaming: streamer.isStreaming,
-            lastStream: streamer.lastStream
+            id: user._id.toString(),
+            username: user.username,
+            avatar: user.avatar,
+            isStreaming: user.isStreaming,
+            lastStream: user.lastStream
         })
     }
 

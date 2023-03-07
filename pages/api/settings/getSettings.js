@@ -11,6 +11,7 @@ export default async function handler(req, res) {
 
     res.json({
         success: true,
-        streamToken: buildStreamToken(account._id.toString(), account.streamToken)
+        streamToken: buildStreamToken(account._id.toString(), account.streamToken),
+        streamName: account.streamName
     })
 }

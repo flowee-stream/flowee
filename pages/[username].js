@@ -52,6 +52,11 @@ export default function Stream(props) {
     return (
         <>
             <Head>
+                <meta property="og:title" content={`${props.username} on Flowee`} />
+                <meta property="og:type" content="website" />
+                <meta property="og:url" content="https://flowee.ru" />
+                <meta property="og:description" content="Flowee is an open-source streaming platform built for people" />
+                <meta name="theme-color" content="#DA3DFF" />
                 <title>{`${props.username} - Flowee`}</title>
             </Head>
             <Sidebar />
@@ -61,6 +66,8 @@ export default function Stream(props) {
                     <div className="max-w-[1300px] md:mr-10">
                         <FlvNextPlayer
                             url={props.streamURL}
+                            enableStashBuffer={false}
+                            isMuted={false}
                         />
                     </div>
                 ) : (

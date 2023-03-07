@@ -11,6 +11,11 @@ export default function Home(props) {
 	return (
 		<>
 			<Head>
+				<meta property="og:title" content="Flowee" />
+                <meta property="og:type" content="website" />
+                <meta property="og:url" content="https://flowee.ru" />
+                <meta property="og:description" content="Flowee is an open-source streaming platform built for people" />
+                <meta name="theme-color" content="#DA3DFF" />
 				<title>Flowee</title>
 			</Head>
 			<Sidebar />
