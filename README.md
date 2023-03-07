@@ -50,6 +50,14 @@ Launch the application with the following command.
 npm run start
 ```
 
+6. Catch 50x errors in nginx (optional)
+
+Copy error html file into the /var/www/flowee directory
+
+```bash
+cp 502.html /var/www/flowee/502.html
+```
+
 The Flowee streaming service is now running on your machine. Please visit http://localhost:3000 to access the application. 
 
 If you are using a hosting service, please make sure to configure the appropriate ports and environment variables for your production environment.
