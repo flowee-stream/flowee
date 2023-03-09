@@ -21,7 +21,7 @@ export default function Home(props) {
 			<Sidebar />
 			<main className="ml-[20px] md:ml-[150px] mt-[50px]">
 				<div className="flex flex-col">
-					<span className="font-bold text-[40px]">Welcome home</span>
+					<span className="font-bold text-[40px]">Welcome!</span>
 					<span className="font-semibold text-[25px]">Flowee is an open-source streaming platform built for people</span>
 					<div className="flex gap-3 mt-5">
 						<a href="https://github.com/flowee-stream"><button className="bg-black">GitHub</button></a>
@@ -38,7 +38,7 @@ export default function Home(props) {
 					? <span>No one is streaming right now</span>
 					: props.live.map(user => {
 							return (
-								<Link key={user.id} className="flex gap-7 bg-[#9c68b0] rounded-l-[50px] rounded-r-[15px] pr-5 transition-opacity hover:opacity-80" href={`/${user.username}`}>
+								<Link key={user.id} className="flex gap-7 bg-[#9c68b0] rounded-l-[50px] rounded-r-full pr-5 transition-opacity hover:opacity-80" href={`/${user.username}`}>
 									{user.avatar == 'default'
 									? <DefaultAvatar size="60" username={user.username} font="25" />
 									: <img src={user.avatar} className="rounded-full unselectable border-[5px] border-[#70676a]" width="60" alt="Avatar" />}
@@ -63,7 +63,7 @@ export default function Home(props) {
 						? <span>No users found</span>
 						: props.users.map(user => {
 							return (
-								<Link key={user.id} className="flex gap-7 bg-[#9c68b0] rounded-l-[50px] rounded-r-[15px] pr-5 transition-opacity hover:opacity-80" href={`/${user.username}`}>
+								<Link key={user.id} className="flex gap-7 bg-[#9c68b0] rounded-l-[50px] rounded-r-[50px] pr-5 transition-opacity hover:opacity-80" href={`/${user.username}`}>
 									{user.avatar == 'default'
 									? <DefaultAvatar size="60" username={user.username} font="25" />
 									: <img src={user.avatar} className="rounded-full unselectable border-[5px] border-[#70676a]" width="60" alt="Avatar" />}
