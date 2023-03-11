@@ -83,7 +83,7 @@ export default function Stream(props) {
                         && <span>{props.views} views • Started {timeDifference(props.lastStream)}</span>}
                     </div>
                     
-                    <div className="flex flex-col gap-1 py-2 items-center md:flex-row md:items-start bg-[#9c68b0] md:rounded-l-[50px] md:rounded-r-[15px] md:max-w-[500px] mt-5">
+                    <div className="flex flex-col gap-1 py-2 items-center md:flex-row md:items-start bg-[#262626] md:rounded-l-[50px] md:rounded-r-[50px] md:max-w-[500px] mt-5">
                         {props.avatar == 'default'
 						? <DefaultAvatar size="60" username={props.username} font="25" />
 						: <img src={props.avatar} className="rounded-full unselectable border-[5px] border-[#70676a]" width="60" alt="Avatar" />}
@@ -110,6 +110,7 @@ export default function Stream(props) {
                             && <button onClick={follow}>{followed ? 'Unfollow' : 'Follow'}</button>}
                         </div>
                     </div>
+                    <span className="text-[12px] gap-3">TODO: Описание</span>
                 </div>
             </main>
         </>
