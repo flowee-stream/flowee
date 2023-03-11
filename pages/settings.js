@@ -36,7 +36,34 @@ export default function Settings(props) {
             err.innerText = 'Failed to change stream name'
         }
     }
+    const [usernameSettings, setUsernameSettings] = useState({
+        userName: props.username
+    })
 
+    const updateUserName = async (e) => {
+        e.preventDefault()
+
+        let err = document.getElementById('streamNameError')
+
+        err.innerText = ''
+
+        // pre-request error handling
+        if(streamSettings.streamName.length > 50) {
+            err.innerText = 'User name length can\'t be more than 50 symbols'
+            return
+        }
+
+        let res = await axios.post(process.env.NEXT_PUBLIC_API_HOST + '/settings/updateUsername', {
+            token: props.token,
+            newUsername: usernameSettings.userName
+        })
+
+        if(res.data.success) {
+            err.innerText = 'Username changed'
+        } else {
+            err.innerText = 'Failed to change Username'
+        }
+    }
     const logOut = () => {
         deleteCookie('token')
         router.push('/login')
@@ -48,7 +75,20 @@ export default function Settings(props) {
                 <title>Settings</title>
             </Head>
             <Sidebar />
+            
             <main className="flex flex-col gap-10 mt-5 md:mt-[80px] md:ml-[150px]">
+            	<div className="flex flex-col items-center md:items-start gap-3">
+            		<span className="text-[30px] font-medium">User Settings</span>
+            	                                
+            	    <div className="flex flex-col gap-1">
+            	     		<span>Username</span>
+            	            		<form className="flex gap-3" onSubmit={updateUserName}>
+            	            			<input type="text" placeholder={props.username} onChange={(e) => {setUsernameSettings({ ...usernameSettings, userName: e.target.value })}} />
+            	            			<button type="submit" className="bg-[gray]">Update</button>
+            	            		</form>
+            	            <span className="text-gray-100" id="streamNameError"></span>
+            	 	</div>
+                </div>
                 <div className="flex flex-col items-center text-center md:items-start gap-3">
                     <span className="text-[30px] font-medium">How to stream?</span>
                     <span>RTMP server:</span>
